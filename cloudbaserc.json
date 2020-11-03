@@ -1,0 +1,34 @@
+{
+  "version": "2.0",
+  "envId": "{{env.ENV_ID}}",
+  "framework": {
+    "name": "jenkins",
+    "plugins": {
+      "client": {
+        "use": "@cloudbase/framework-plugin-container",
+        "inputs": {
+          "cpu": 1,
+          "mem": 2,
+          "serviceName": "jenkins",
+          "servicePath": "/",
+          "localPath": "./",
+          "uploadType": "package",
+          "containerPort": 8080,
+          "maxNum": 1,
+          "envVariables": {},
+          "volumeMounts": {
+            "/var/jenkins_home": "JENKINS_CFS"
+          }
+        }
+      }
+    },
+    "requirement": {
+      "addons": [
+        {
+          "type": "CFS",
+          "name": "JENKINS_CFS"
+        }
+      ]
+    }
+  }
+}
