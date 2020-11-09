@@ -17,7 +17,7 @@
           "maxNum": 1,
           "envVariables": {},
           "volumeMounts": {
-            "/var/jenkins_home": "JENKINS_CFS"
+            "/var/jenkins_home": "jenkins-cfs"
           }
         }
       }
@@ -26,7 +26,7 @@
       "addons": [
         {
           "type": "CFS",
-          "name": "JENKINS_CFS"
+          "name": "jenkins-cfs"
         }
       ]
     }
